@@ -1,6 +1,35 @@
 {
-  "name": "typescript-lambda-setting-tut",
+  "name": "luber-server",
+  "description": "Boilerplate for #GraphQL #Typescript #NodeJS",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "repository": "https://github.com/lopun/boilerplate-server",
+  "author": "lopun <ujin43255252@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/express": "^4.16.0",
+    "@types/jsonwebtoken": "^7.2.8",
+    "@types/node": "^10.12.0"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon --exec ts-node -r tsconfig-paths/register index.ts -e ts",
+    "prebuild": "rm -rf dist ",
+    "build": "tsc",
+    "prestart": "yarn build",
+    "start": "cross-env NODE_PATH=dist/ node dist/index.js"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.403.0",
+    "cors": "^2.8.4",
+    "cross-env": "^5.2.0",
+    "dotenv": "^6.1.0",
+    "helmet": "^3.14.0",
+    "nodemon": "^1.18.4",
+    "ts-node": "^7.0.1",
+    "tsconfig-paths": "^3.6.0",
+    "tslint-config-prettier": "^1.15.0",
+    "typeorm": "^0.2.7",
+    "typescript": "^3.1.3"
+  }
 }
